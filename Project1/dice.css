@@ -4,19 +4,16 @@
 #container {
 	width:100%;
 	height:100%; 
-	 
-	
 }
 header {
 	background-color: black; 
 	height: 100px; 
-	
+	overflow:hidden;
 }
 header #title  {
 	position: absolute; 
 	top: 10px; 
 	right: 35%; 
-	
 }
 
 #title h1 {
@@ -26,15 +23,12 @@ header #title  {
 	color: white;
 	padding: 30px; 
 	font-size: 40px; 
-	
-	
 }
 
 header ul {
 	float: right; 
 	list-style-type: none; 
 	padding: 50px; 
-	
 }
 
 header ul li {
@@ -53,36 +47,89 @@ header ul li a {
 header ul li a:hover {
 	background-color: white; 
 	color: black; 
-	
 }
 #mainpanel {
 	float:left; 
 	width:100%;
 	margin-top:0px; 
-	background-color: yellow; 
+	background-color: white; 
 	height: 100%; 
-	
 }
 
 #leftside {
 	width:25%;
 	background-color: gray; 
 	float:left; 
-	
-	 
+	height:40%;
+}
+#leftsidetitle h3 {
+	font-family:arial;
+	color:white;
+}
+#leftsidetitle{
+	width:55px;
+	float:center;
+	border:2px solid white;
+	background-color:black;
+	position:relative;
+	margin: 0 auto; 
+}
+#leftside li{
+	font-family:arial;
 }
 #gamebox {
 	width:50%; 
 	background-color: red; 
 	float:left; 
-	
+	height:70%;
+}
+#gamebox button{
+	border-radius: 10px; 
+	position:relative; 
+	left: 350px;
+	top: 450px;
+	width:50px;
 }
 #rightside {
 	width:25%; 
 	background-color: gray;
 	float:left; 
-	 
-	 
+	height:30%
+}
+#rightsidetitle{
+	width:65px;
+	float:center;
+	border:2px solid white;
+	background-color:black;
+	position:relative;
+	margin: 0 auto; 
+}
+	
+#rightside h3 {
+	font-family:arial;
+	color: white; 
+}
+#smileface {
+	background-color: gray;
+	width: 50%;
+	transform: translate(50%,-1%);
+}
+#smileface img{
+	max-width:90%;
+	max-height:100%;
+	padding:10px;
+	transform: scale(0.5);
+}
+th,td {
+	border:1px solid black;
+	font-family: arial; 
+	color: white;
+	padding: 10px;
+}
+table {
+	margin: 0 auto; 
+	left: 40px;
+	border: 2px solid white; 
 }
 
 
