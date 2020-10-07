@@ -149,6 +149,7 @@ table {
 #footer{
 	background-color: black;
 	margin-top:0px;
+	height:100%;
 	
 }
 #footer p{
@@ -157,4 +158,13 @@ table {
 	text-align: center;
 	
 }
-
+#winner {
+	animation-name:winner;
+	animation-duration:4s;
+	animation-fill-mode: forwards;
+}
+@keyframes winner{
+	0% {background-color:gray;}
+	100% {background-color:blue;}
+	
+}
