@@ -54,13 +54,15 @@ header ul li a:hover {
 	margin-top:0px; 
 	background-color: white; 
 	height: 100%; 
+	
 }
 
 #leftside {
 	width:25%;
 	background-color: gray; 
 	float:left; 
-	height:40%;
+	height:70%;
+	
 }
 #leftsidetitle h3 {
 	font-family:arial;
@@ -79,22 +81,35 @@ header ul li a:hover {
 }
 #gamebox {
 	width:50%; 
-	background-color: red; 
+	background-color: green; 
 	float:left; 
 	height:70%;
+	
 }
 #gamebox button{
 	border-radius: 10px; 
 	position:relative; 
-	left: 350px;
-	top: 450px;
+	left: 170px;
+	top: 150px;
 	width:50px;
+	transition-property:width; 
+	transition-delay:1s;
+	transition-duration:.5s;
+}
+#gamebox button:hover{
+	width:100px;
+}
+#gamebox img{
+	position: relative; 
+	left:300px;
+	top:100px;
 }
 #rightside {
 	width:25%; 
 	background-color: gray;
 	float:left; 
-	height:30%
+	height:70%;
+	
 }
 #rightsidetitle{
 	width:65px;
@@ -131,5 +146,15 @@ table {
 	left: 40px;
 	border: 2px solid white; 
 }
-
+#footer{
+	background-color: black;
+	margin-top:0px;
+	
+}
+#footer p{
+	color:white;
+	font-family:arial;
+	text-align: center;
+	
+}
 
