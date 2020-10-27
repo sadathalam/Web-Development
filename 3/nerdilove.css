@@ -68,6 +68,7 @@ legend {
 
 .match {
 	margin-bottom: 1em;
+	
 }
 
 .match img {
@@ -75,6 +76,7 @@ legend {
 	float: left;
 	margin-right: 10px;
 	margin-bottom: 3em;
+	
 }
 
 .match p {
@@ -83,7 +85,8 @@ legend {
 }
 
 .match ul {
-	padding-left: 160px;
+	width: 400px; 
+	float:left; 
 }
 
 ul {
