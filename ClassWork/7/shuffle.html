@@ -1,0 +1,30 @@
+<html>
+<body>
+<script>
+var arr1 = [-3,8,7,6,5,-4]; 
+document.writeln("<p> Before Shuffle </p>"); 
+	printArray(arr1);
+   shuffle(arr1); 
+   document.writeln("<p> After shuffle </p>"); 
+   printArray(arr1); 
+function shuffle(arra1) {
+    var ctr = arra1.length, temp, index;
+		while (ctr > 0) {
+			index = Math.floor(Math.random() * ctr);
+			ctr--;
+			temp = arra1[ctr];
+			arra1[ctr] = arra1[index];
+			arra1[index] = temp;
+		}
+    return arra1;
+}
+function printArray(a){
+   var aLength = a.length; 
+   for(var i = 0; i<a.length; i++){
+   document.write(a[i] + ", "); 
+   }
+   }
+
+</script>
+</body>
+</html>
