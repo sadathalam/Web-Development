@@ -7,20 +7,22 @@
 <script>
 function myFunction(){
 if(validate(signin)){
-var id = document.getElementById("id").value;
-var firstName = document.getElementById("firstName").value;
-var lastName = document.getElementById("lastName").value;
+let id = document.getElementById("id").value;
+let firstName = document.getElementById("firstName").value;
+let lastName = document.getElementById("lastName").value;
 
-var output = "UserID: " + id + "<br>" + "First Name: " + firstName +"<br>"+ "Last Name: " + lastName;  
+let output = "UserID: " + id + "<br>" + "First Name: " + firstName +"<br>"+ "Last Name: " + lastName;  
 document.getElementById("output").innerHTML = output; 
 }
 
 }
 function validate(form){
-    var id = document.getElementById("id").value;
-	var firstName = document.getElementById("firstName").value;
-	var lastName = document.getElementById("lastName").value;
-    var errors = [];
+    let id = document.getElementById("id").value;
+	let firstName = document.getElementById("firstName").value;
+	let lastName = document.getElementById("lastName").value;
+    let popUp = document.getElementById('popUp')
+    let placeToMessage = document.getElementById('placeToMessage')
+    let errors = [];
  
     if (!checkLength(id)) {
         errors.push("ID, ");
@@ -56,9 +58,11 @@ function checkLength(text, min, max){
 }
  
 function reportErrors(errors){
-    var msg = "There were some problems...\n";
-    var numError;
-    for (var i = 0; i<errors.length; i++) {
+    popUp.classList.toggle('popUpVisible')
+    const msg = "There were some problems...\n";
+    placeToMessage.innerHTML = msg
+    let numError;
+    for (let i = 0; i<errors.length; i++) {
         numError = i + 1;
         msg += "\n" + numError + ". " + errors[i];
     }
@@ -74,7 +78,9 @@ FirstName: <input type="text" id="firstName"><br><br>
 LastName: <input type="text" id="lastName"><br><br>
 <button type="button" onclick="myFunction()">Add</button>
 
-
+<div id="popUp" class="popUp_hidden">
+    <p id="placeToMessage"></p>
+</div>
 
 <div>
 <p id="output"> </p>

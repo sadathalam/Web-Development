@@ -62,3 +62,9 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background: #0165b6;
 }
+.popUp_hidden{
+    display:none
+}
+.popUpVisible{
+    display: block;
+}
