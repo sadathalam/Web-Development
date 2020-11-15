@@ -13,6 +13,10 @@ var lastName = document.getElementById("lastName").value;
 
 var output = "UserID: " + id + "<br>" + "First Name: " + firstName +"<br>"+ "Last Name: " + lastName;  
 document.getElementById("output").innerHTML = output; 
+document.getElementById("idError").innerHTML = ""; 
+document.getElementById("firstNameError").innerHTML = ""; 
+document.getElementById("lastNameError").innerHTML = ""; 
+
 }
 
 }
@@ -23,24 +27,40 @@ function validate(form){
     var errors = [];
  
     if (!checkLength(id)) {
-        errors.push("ID, ");
+        errors.push("ID ");
 		document.getElementById("idError").innerHTML = "Please Enter an ID"; 
     }
  
     if (!checkLength(firstName)) {
-        errors.push("FirstName, ");
+        errors.push("FirstName ");
 		document.getElementById("firstNameError").innerHTML = "Please Enter a First Name"; 
     }
 	
     if (!checkLength(lastName)) {
-        errors.push("LastName");
+        errors.push("LastName ");
 		document.getElementById("lastNameError").innerHTML = "Please Enter a Last Name"; 
+    }
+	if (checkLength(id)) {
+        
+		document.getElementById("idError").innerHTML = ""; 
+    }
+ 
+    if (checkLength(firstName)) {
+        
+		document.getElementById("firstNameError").innerHTML = ""; 
+    }
+	
+    if (checkLength(lastName)) {
+        
+		document.getElementById("lastNameError").innerHTML = ""; 
     }
  
  
     if (errors.length > 0) {
         reportErrors(errors);
-        return false;
+		document.getElementById("output").innerHTML = ""; 
+
+		return false;
     }
  
     return true;
@@ -56,14 +76,20 @@ function checkLength(text, min, max){
 }
  
 function reportErrors(errors){
-    var msg = "There were some problems...\n";
-    var numError;
+    var msg = "You forgot to fill in the following field(s) ";
+    
     for (var i = 0; i<errors.length; i++) {
-        numError = i + 1;
-        msg += "\n" + numError + ". " + errors[i];
+        if(i != errors.length-1){
+		msg += errors[i] + ", "; 
+		}else{
+        msg +=   errors[i];
+		}
     }
     alert(msg);
+	
+
 }
+
 </script>
 <form name="signin">
 <p id="idError" class="error"></p>
