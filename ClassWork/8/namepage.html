@@ -1,0 +1,84 @@
+<html>
+<body>
+<head>
+<title> CW08 </title>
+<link rel="stylesheet" href="style.css">
+</head>
+<script>
+function myFunction(){
+if(validate(signin)){
+var id = document.getElementById("id").value;
+var firstName = document.getElementById("firstName").value;
+var lastName = document.getElementById("lastName").value;
+
+var output = "UserID: " + id + "<br>" + "First Name: " + firstName +"<br>"+ "Last Name: " + lastName;  
+document.getElementById("output").innerHTML = output; 
+}
+
+}
+function validate(form){
+    var id = document.getElementById("id").value;
+	var firstName = document.getElementById("firstName").value;
+	var lastName = document.getElementById("lastName").value;
+    var errors = [];
+ 
+    if (!checkLength(id)) {
+        errors.push("ID, ");
+		document.getElementById("idError").innerHTML = "Please Enter an ID"; 
+    }
+ 
+    if (!checkLength(firstName)) {
+        errors.push("FirstName, ");
+		document.getElementById("firstNameError").innerHTML = "Please Enter a First Name"; 
+    }
+	
+    if (!checkLength(lastName)) {
+        errors.push("LastName");
+		document.getElementById("lastNameError").innerHTML = "Please Enter a Last Name"; 
+    }
+ 
+ 
+    if (errors.length > 0) {
+        reportErrors(errors);
+        return false;
+    }
+ 
+    return true;
+}
+function checkLength(text, min, max){
+    min = min || 1;
+    max = max || 10000;
+ 
+    if (text.length < min || text.length > max) {
+        return false;
+    }
+    return true;
+}
+ 
+function reportErrors(errors){
+    var msg = "There were some problems...\n";
+    var numError;
+    for (var i = 0; i<errors.length; i++) {
+        numError = i + 1;
+        msg += "\n" + numError + ". " + errors[i];
+    }
+    alert(msg);
+}
+</script>
+<form name="signin">
+<p id="idError" class="error"></p>
+ID: <input type="text" id="id"><br><br>
+<p id="firstNameError" class="error"></p>
+FirstName: <input type="text" id="firstName"><br><br>
+<p id="lastNameError" class="error"></p>
+LastName: <input type="text" id="lastName"><br><br>
+<button type="button" onclick="myFunction()">Add</button>
+
+
+
+<div>
+<p id="output"> </p>
+</div>
+</form>
+</body>
+</html>
